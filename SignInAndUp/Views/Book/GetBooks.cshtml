@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "_Layout";
+}
+@model IEnumerable<BookModel>
+    <div class="container">
+
+        <p class="h5"> this is the Getbooks view page</p>
+
+            @foreach (var book in @Model)
+            {
+    <div class="card" style="width: 18rem;">
+        <img src="~/Images/Periperi.jpg" class="card-img-top" alt="..."/>
+        <div class="card-body">
+            <h5 class="card-title">@book.PizzaName</h5>
+            <p class="card-text">@book.Description </p>
+            <a asp-controller="Book" asp-action="GetBook" asp-route-Id="@book.Id" class="btn btn-primary">View</a>
+        </div>
+    </div>
+            }
+        </div>
+    </div>
